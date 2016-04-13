@@ -7,7 +7,7 @@
    Path: ~public_html/csc2210/practice/countProject/countProject/phpcount.php
 */
 
-   require("../../../include/utility.php");
+   require("../../include/utility.php");
    if($_SERVER["REQUEST_METHOD"]=="POST")
    {
       logMsg("Starting count");
@@ -19,7 +19,10 @@
       $increment = 1;
 
       // Connect To Database
-      $dbconn = connectToDB();
+      $dbname="csc2210_cgordon_db";
+      $dbuser="cgordonweb";
+      $dbpass=")&#@$($"
+      $dbconn = connectToDB($dbname,$dbuser,$dbpass);
 
       // Add to Database
       logMsg("SELECTING count from Database (COUNT = ".$count);
@@ -36,7 +39,7 @@
 
       $result += $increment;
       logMsg($result);
-      logMsg("After Increment Count = "$.count);
+      logMsg("After Increment Count = ".$count);
 
       $query = "UPDATE count FROM countProject;";
       $result = $dbconn->query($query);
