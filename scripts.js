@@ -4,13 +4,13 @@
  * ~/csc2210/practice/counterProject/scripts.js
  */
 
-function incCount()
-{
-  $.post("phpcounter.php")
-}
-
-function getCount()
-{
+setInterval(function() {
   count=post("getCount.php");
   $("#ctMsg").html("Count: "+count);
+},
+5000);
+
+function incCount()
+{
+  $.post("phpcounter.php");
 }
