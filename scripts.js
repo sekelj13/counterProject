@@ -5,8 +5,9 @@
  */
 
 setInterval(function() {
-  count=post("getCount.php");
-  $("#ctMsg").html("Count: "+count);
+  count=$.post("getCount.php",function(count) {
+    $("#ctMsg").html("Count: "+count);
+  });
 },
 5000);
 
